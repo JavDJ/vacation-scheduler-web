@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldPath Travel - Vacation Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Page -->
+        <div id="loginPage" class="page active">
+            <div class="container">
+                <div class="header">
+                    <h1>🌍 WorldPath Travel</h1>
+                    <p>Vacation Scheduler</p>
+                </div>
+                <div class="card">
+                    <h2>Login</h2>
+                    <div id="loginError" class="error hidden"></div>
+                    <input type="text" id="loginUsername" placeholder="Username">
+                    <input type="password" id="loginPassword" placeholder="Password">
+                    <button onclick="login()">Login</button>
+                    <p>Don't have an account? 
+                        <a href="#" onclick="showPage('registerPage')">Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div id="registerPage" class="page">
+            <div class="container">
+                <div class="header">
+                    <h1>🌍 WorldPath Travel</h1>
+                    <p>Vacation Scheduler</p>
+                </div>
+                <div class="card">
+                    <h2>Register</h2>
+                    <div id="registerError" class="error hidden"></div>
+                    <input type="text" id="regUsername" placeholder="Username">
+                    <input type="email" id="regEmail" placeholder="Email">
+                    <input type="password" id="regPassword" placeholder="Password">
+                    <button onclick="register()">Register</button>
+                    <p>Already have an account? 
+                        <a href="#" onclick="showPage('loginPage')">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboardPage" class="page">
+            <nav>
+                <span>🌍 WorldPath Travel</span>
+                <div>
+                    <button onclick="showPage('dashboardPage')">Vacations</button>
+                    <button onclick="showPage('searchPage')">Search</button>
+                    <button onclick="showPage('reportPage')">Reports</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="top-bar">
+                    <h2>My Vacations</h2>
+                    <button onclick="showPage('addVacationPage')">+ Add Vacation</button>
+                </div>
+                <div id="vacationsList"></div>
+            </div>
+        </div>
+
+        <!-- Add Vacation Page -->
+        <div id="addVacationPage" class="page">
+            <nav>
+                <span>🌍 WorldPath Travel</span>
+                <div>
+                    <button onclick="showPage('dashboardPage')">Vacations</button>
+                    <button onclick="showPage('searchPage')">Search</button>
+                    <button onclick="showPage('reportPage')">Reports</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="card">
+                    <h2>Add Vacation</h2>
+                    <div id="addVacationError" class="error hidden"></div>
+                    <input type="text" id="vacTitle" placeholder="Vacation Title">
+                    <input type="text" id="vacHotel" placeholder="Hotel Name">
+                    <input type="text" id="vacStart" placeholder="Start Date (MM/DD/YYYY)">
+                    <input type="text" id="vacEnd" placeholder="End Date (MM/DD/YYYY)">
+                    <button onclick="addVacation()">Save Vacation</button>
+                    <button class="secondary" onclick="showPage('dashboardPage')">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Excursions Page -->
+        <div id="excursionsPage" class="page">
+            <nav>
+                <span>🌍 WorldPath Travel</span>
+                <div>
+                    <button onclick="showPage('dashboardPage')">Vacations</button>
+                    <button onclick="showPage('searchPage')">Search</button>
+                    <button onclick="showPage('reportPage')">Reports</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="top-bar">
+                    <h2 id="excursionsTitle">Excursions</h2>
+                    <button onclick="showAddExcursionForm()">+ Add Excursion</button>
+                </div>
+                <div id="addExcursionForm" class="card hidden">
+                    <h3>Add Excursion</h3>
+                    <div id="addExcursionError" class="error hidden"></div>
+                    <input type="text" id="excTitle" placeholder="Excursion Title">
+                    <input type="text" id="excDate" placeholder="Date (MM/DD/YYYY)">
+                    <button onclick="addExcursion()">Save Excursion</button>
+                    <button class="secondary" onclick="hideAddExcursionForm()">Cancel</button>
+                </div>
+                <div id="excursionsList"></div>
+                <button class="secondary" onclick="showPage('dashboardPage')">
+                    Back to Vacations
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Page -->
+        <div id="searchPage" class="page">
+            <nav>
+                <span>🌍 WorldPath Travel</span>
+                <div>
+                    <button onclick="showPage('dashboardPage')">Vacations</button>
+                    <button onclick="showPage('searchPage')">Search</button>
+                    <button onclick="showPage('reportPage')">Reports</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="card">
+                    <h2>Search</h2>
+                    <input type="text" id="searchKeyword" 
+                        placeholder="Search vacations by title or hotel...">
+                    <button onclick="search()">Search</button>
+                </div>
+                <div id="searchResults"></div>
+            </div>
+        </div>
+
+        <!-- Report Page -->
+        <div id="reportPage" class="page">
+            <nav>
+                <span>🌍 WorldPath Travel</span>
+                <div>
+                    <button onclick="showPage('dashboardPage')">Vacations</button>
+                    <button onclick="showPage('searchPage')">Search</button>
+                    <button onclick="showPage('reportPage')">Reports</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="top-bar">
+                    <h2>Vacation Summary Report</h2>
+                    <button onclick="generateReport()">Generate Report</button>
+                </div>
+                <div id="reportContent"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+nav {
+    background-color: #1a73e8;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+nav span {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+nav button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 16px;
+    margin-left: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+nav button:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a73e8;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: #1a73e8;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    outline: none;
+}
+
+input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26,115,232,0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #1557b0;
+}
+
+button.secondary {
+    background-color: #666;
+}
+
+button.secondary:hover {
+    background-color: #444;
+}
+
+button.danger {
+    background-color: #d93025;
+}
+
+button.danger:hover {
+    background-color: #b52a1f;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top-bar button {
+    width: auto;
+    margin-bottom: 0;
+}
+
+.vacation-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vacation-info h3 {
+    color: #1a73e8;
+    margin-bottom: 5px;
+}
+
+.vacation-info p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.vacation-actions button {
+    width: auto;
+    margin-left: 8px;
+    margin-bottom: 0;
+    padding: 8px 16px;
+}
+
+.excursion-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #1a73e8;
+}
+
+.excursion-info h4 {
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.excursion-info p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.excursion-actions button {
+    width: auto;
+    margin-left: 8px;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    font-size: 0.85em;
+}
+
+.error {
+    background-color: #fce8e6;
+    color: #d93025;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.success {
+    background-color: #e6f4ea;
+    color: #137333;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.hidden {
+    display: none;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.report-table th {
+    background-color: #1a73e8;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.report-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.report-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.report-header {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.report-header h3 {
+    color: #1a73e8;
+    margin-bottom: 5px;
+}
+
+.report-header p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
