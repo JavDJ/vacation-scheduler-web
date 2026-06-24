@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/api';
+const API_URL = 'https://d424-software-engineering-capstone-8iwy.onrender.com/api';
 let token = localStorage.getItem('token');
 let currentVacationId = null;
 
